@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#1A1A2E</color>
+    <color name="ink_light">#888888</color>
+    <color name="paper">#F5F0E8</color>
+    <color name="paper2">#EDE8DC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#C0392B</color>
+    <color name="red_light">#F5C6C2</color>
+    <color name="indigo">#2C3E7A</color>
+    <color name="indigo_light">#C5CCE8</color>
+    <color name="green">#27765C</color>
+    <color name="green_light">#C2E0D8</color>
+    <color name="gold">#C9A84C</color>
+
+    <color name="colorPrimary">#1A1A2E</color>
+    <color name="colorPrimaryVariant">#2C3E7A</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#C0392B</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1A1A2E</color>
+    <color name="colorBackground">#F5F0E8</color>
+    <color name="colorOnBackground">#1A1A2E</color>
+    <color name="colorError">#C0392B</color>
+    <color name="colorOnError">#FFFFFF</color>
+</resources>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ink"
+            app:titleTextColor="@color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 진행도 행 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvRound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1회차"
+                android:textSize="13sp"
+                android:textColor="@color/indigo"/>
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 / 46"
+                android:textSize="13sp"
+                android:textColor="@color/ink_light"/>
+        </LinearLayout>
+
+        <!-- 프로그레스 바 -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:trackCornerRadius="4dp"
+            app:indicatorColor="@color/indigo"
+            app:trackColor="@color/paper2"/>
+
+        <!-- 가나 표시 카드 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvKana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="あ"
+                android:textSize="100sp"
+                android:textColor="@color/ink"
+                android:fontFamily="serif"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 객관식 보기 4개 -->
+        <GridLayout
+            android:id="@+id/layoutMcq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpt1"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:text="ka"
+                android:textSize="18sp"
+                android:textColor="@color/ink"
+                app:backgroundTint="@color/paper2"
+                app:cornerRadius="14dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpt2"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:text="ki"
+                android:textSize="18sp"
+                android:textColor="@color/ink"
+                app:backgroundTint="@color/paper2"
+                app:cornerRadius="14dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpt3"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:text="ku"
+                android:textSize="18sp"
+                android:textColor="@color/ink"
+                app:backgroundTint="@color/paper2"
+                app:cornerRadius="14dp"
+                android:layout_marginEnd="6dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpt4"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:text="ke"
+                android:textSize="18sp"
+                android:textColor="@color/ink"
+                app:backgroundTint="@color/paper2"
+                app:cornerRadius="14dp"
+                android:layout_marginStart="6dp"/>
+        </GridLayout>
+
+        <!-- 주관식 입력 -->
+        <LinearLayout
+            android:id="@+id/layoutSubj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:hint="로마자 입력 (예: ka)"
+                android:layout_marginBottom="12dp"
+                app:boxStrokeColor="@color/indigo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitSubj"
+                android:layout_width="160dp"
+                android:layout_height="52dp"
+                android:text="확인"
+                android:textSize="15sp"
+                app:backgroundTint="@color/ink"
+                app:cornerRadius="14dp"/>
+        </LinearLayout>
+
+        <!-- 피드백 -->
+        <TextView
+            android:id="@+id/tvFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 다음 버튼 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="다음 →"
+            android:textSize="16sp"
+            app:backgroundTint="@color/indigo"
+            app:cornerRadius="16dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

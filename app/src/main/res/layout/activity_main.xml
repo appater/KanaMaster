@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ink"
+            app:titleTextColor="@color/white"
+            app:title="カナ マスター"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="20dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- 세션 카운터 -->
+            <TextView
+                android:id="@+id/tvSessionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0회 완료"
+                android:textColor="@color/ink_light"
+                android:textSize="13sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- 문자 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="문자 선택"
+                android:textColor="@color/ink_light"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleScript"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHira"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="140dp"
+                    android:layout_height="52dp"
+                    android:text="ひらがな"
+                    android:textSize="15sp"
+                    app:strokeColor="@color/ink"
+                    android:textColor="@color/ink"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnKata"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="140dp"
+                    android:layout_height="52dp"
+                    android:text="カタカナ"
+                    android:textSize="15sp"
+                    app:strokeColor="@color/ink"
+                    android:textColor="@color/ink"/>
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- 문제 형식 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="문제 형식"
+                android:textColor="@color/ink_light"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                android:layout_marginBottom="32dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMcq"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="140dp"
+                    android:layout_height="52dp"
+                    android:text="객관식"
+                    android:textSize="15sp"
+                    app:strokeColor="@color/ink"
+                    android:textColor="@color/ink"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubj"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="140dp"
+                    android:layout_height="52dp"
+                    android:text="주관식"
+                    android:textSize="15sp"
+                    app:strokeColor="@color/ink"
+                    android:textColor="@color/ink"/>
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- 전체 퀴즈 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFullQuiz"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:text="전체 퀴즈 시작 (46문제)"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/ink"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- 아침 퀴즈 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMorningQuiz"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:text="☀️ 아침 퀴즈"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/indigo"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- 오답 노트 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnErrorNote"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="280dp"
+                android:layout_height="56dp"
+                android:text="📝 오답 노트"
+                android:textSize="15sp"
+                android:textColor="@color/red"
+                app:strokeColor="@color/red"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvErrorBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/red"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:layout_marginBottom="32dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
